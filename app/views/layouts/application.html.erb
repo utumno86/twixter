@@ -7,37 +7,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="row">
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1>
-
-        </h1>
-      </li>
-      <li>
-        <p id="notice"><%= notice %></p>
-      </li>
-      <li>
-        <p id="alert"><%= alert %></p>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <div class="right">
-        <ul>
-          <% if user_signed_in? %>
-              <li>Welcome, <%= current_user.email %></li>
+<header class="navbar navbar-default" role="navigation">
+  <div class="navbar-inner">
+    <div class="container">
+      <div id="logo" class="navbar-brand">LOGO HERE <%= link_to "Welcome to Twixter!", root_path %></div>
+      <nav class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-center">  
+        <li><p id="notice"><%= notice %></p></li>
+        </ul>
+        <% if user_signed_in? -%>
+            <ul class="nav navbar-nav navbar-right">
               <li><%= link_to 'Account', edit_user_registration_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-              <li> User Login</li>
+            </ul>
+        <% else -%>
+            <ul class="nav navbar-nav pull-right">
               <li><%= link_to 'Sign up', new_user_registration_path %></li>
               <li><%= link_to 'Sign in', new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div>
-    </section>
-  </nav>
+            </ul>
+        <% end -%>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div id="main_content" class="container">
+  <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+  <% end %>
+
+  <div id="content" class="col-md-9 center-block">
 
 <%= yield %>
 
