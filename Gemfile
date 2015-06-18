@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'kaminari'
 gem 'mini_magick'
 gem 'quiet_assets'
+gem 'puma'
 
 group :development, :test do
   gem 'byebug'
