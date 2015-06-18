@@ -7,6 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="row">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+
+        </h1>
+      </li>
+      <li>
+        <p id="notice"><%= notice %></p>
+      </li>
+      <li>
+        <p id="alert"><%= alert %></p>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <div class="right">
+        <ul>
+          <% if user_signed_in? %>
+              <li>Welcome, <%= current_user.email %></li>
+              <li><%= link_to 'Account', edit_user_registration_path %></li>
+              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+              <li> User Login</li>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </section>
+  </nav>
 
 <%= yield %>
 

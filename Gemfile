@@ -13,6 +13,7 @@ gem 'kaminari'
 gem 'mini_magick'
 gem 'quiet_assets'
 gem 'puma'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
