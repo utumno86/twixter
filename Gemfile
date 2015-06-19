@@ -15,6 +15,7 @@ gem 'puma'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
