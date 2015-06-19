@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="createTwixt" class="panel right">
+    <h1>Create a Twixt!</h1>
+    <p>
+    <form>
+        <textarea name="text" class="Text"></textarea>
+        <input type="submit" value="Twixt!">
+    </form>
+    </p>
+</div>
+<div id="twixts" class="panel left">
+    <h1>Your Twixt Profile</h1>
+    <div class="Wrapper">
+        <img class="avatar" src="<%= @user.avatar_url %>">
+        <span class="name"><%= @user.name %></span> @<%= @user.username %>
+        <p>
+        XX Twixts
+        <span class="spacing"> ? Followers</span>
+        <span class="spacing"> ? Following</span>
+        </p>
+    </div>
+</div>
+<div class="panel left">
+    <h1>Your Twixts</h1>
+    <div class="Wrapper">
+        Twixts. . .
+    </div>
+</div>
