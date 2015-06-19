@@ -14,6 +14,7 @@ gem 'mini_magick'
 gem 'puma'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'byebug'
