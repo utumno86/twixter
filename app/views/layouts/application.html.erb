@@ -12,11 +12,9 @@
     <div class="container">
       <div id="logo" class="navbar-brand">LOGO HERE <%= link_to "Welcome to Twixter!", root_path %></div>
       <nav class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav navbar-center">  
-        <li><p id="notice"><%= notice %></p></li>
-        </ul>
         <% if user_signed_in? -%>
             <ul class="nav navbar-nav navbar-right">
+              <li>Weclome, <%= current_user.name %></li>
               <li><%= link_to 'Account', edit_user_registration_path %></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             </ul>
