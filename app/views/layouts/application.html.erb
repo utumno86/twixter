@@ -32,7 +32,9 @@
   <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-info") %>
   <% end %>
+  <%unless current_user.blank? || current_user.avatar.blank?  %>
   <% link_to image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
+  <%end  %>
 
   <div id="content" class="col-md-9 center-block">
 
