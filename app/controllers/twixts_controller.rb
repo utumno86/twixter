@@ -9,17 +9,17 @@ class TwixtsController < ApplicationController
   end
 
   def new
-    @twixt = current_user.twixt.build
+    @twixt = current_user.twixts.build
   end
 
   def edit
   end
 
   def create
-    @twixt = current_user.twixt.build(twixt_params)
+    @twixt = current_user.twixts.build(twixt_params)
 
     if @twixt.save
-      redirect_to @twixt, notice: 'Twixt was successfully created.'
+      redirect_to twixts_path, notice: 'Twixt was successfully created.'
     else
       render :new
     end

@@ -1,0 +1,23 @@
+<%= form_for(@twixt) do |f| %>
+    <% if @twixt.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@twixt.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+          <ul>
+            <% @twixt.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :content %><br>
+      <%= f.text_area :content, class: "form-control" %>
+    </div>
+    
+    <div class="form-group">
+      <%= f.submit class: "btn btn-lg btn-primary"  %>
+    </div>
+    
+<% end %>   
