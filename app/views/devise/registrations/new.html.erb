@@ -4,12 +4,6 @@
   <%= devise_error_messages! %>
     
   <div class="field">
-    <p>Please enter your username:</p>
-    <%= f.label :name %><br />
-    <%= f.text_field %>
-  </div>  
-    
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
