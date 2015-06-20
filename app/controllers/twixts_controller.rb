@@ -2,7 +2,7 @@ class TwixtsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @twixts = Twixt.all.page(params[:page])
+    @twixts = Twixt.order(created_at: :desc).page(params[:page])
   end
 
   def show
