@@ -11,8 +11,6 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
-  get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
   
   root 'twixts#index'
  

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 # GET /users/1
   def show
     @user = User.find(params[:id])
-    @twixts = @user.twixts.paginate(page: params[:page])
+    @twixts = Twixt.where(user_id: @user.id).order(created_at: :desc)
   end
 
  # POST /users
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:id])
-    @twixts = Twixt.where(user_id: @user.id).order(created_at: :desc)
   end
 
   def following

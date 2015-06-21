@@ -1,20 +1,13 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= image_tag(@user.avatar.url) %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @user.twixts.any? %>
-      <h3>Twixts (<%= @user.twixts.count %>)</h3>
-      <ol class="twixts">
-        <%= render @twixts %>
-      </ol>
-      <%= will_paginate @twixts %>
-    <% end %>
-  </div>
-</div>
+<h1><%=@user.name  %>'s Profile Page</h1>
+<p><%= image_tag(@user.avatar.url) %></p>
+<%= link_to 'Follow this user', root_path, class: "btn btn-small btn-primary", notice: "You are now
+following this user" %>
+<h3> Twixts: (<%=@twixts.count%>)</h3>
+<% @twixts.each do |twixt|  %>
+		<div class="link row clearfix">
+			<h2>
+				<%=  twixt.content %><br>
+				<small class="author">Submitted <%= time_ago_in_words(twixt.created_at) %> ago</small>
+			</h2>
+		</div>
+<%end %>
