@@ -19,5 +19,18 @@ class User < ActiveRecord::Base
   def display_name
     name.blank? ? email : name
   end
+
+  def self.populate!
+    30.times do
+      u = User.new
+      u.name = Faker::Name.name
+      u.email = Faker::Internet.email(u.name)
+      u.password = Faker::Internet.password(8)
+      u.password_confirmation = u.password
+      u.avatar = Faker::Avatar.image
+      u.save
+    end
+
+  end
 end
 
