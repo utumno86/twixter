@@ -11,12 +11,17 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
  
-  if @user.save
-    redirect_to @user, notice: "Thank you for signing up for Twixter!"
-  else
+    if @user.save
+      redirect_to @user, notice: "Thank you for signing up for Twixter!"
+    else
     render 'new'
+    end
   end
-end
+
+  def profile
+    @user = User.find(params[:id])
+    @twixts = Twixt.where(user_id: @user.id).order(created_at: :desc)
+  end
 
 private
 

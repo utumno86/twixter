@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :twixts
 
+  get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
   
   root 'twixts#index'
  

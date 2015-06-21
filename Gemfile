@@ -16,6 +16,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'fog'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'

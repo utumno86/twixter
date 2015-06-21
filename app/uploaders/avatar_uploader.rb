@@ -24,8 +24,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     'default_avatar.png' #rails will look at 'app/assets/images/default_avatar.png'
   end
 
-  # Process files as they are uploaded:
-  # process :scale => [200, 300]
+   #Process files as they are uploaded:
+   process :resize_to_fit => [408, 504]
   #
   # def scale(width, height)
   #   # do something
