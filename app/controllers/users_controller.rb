@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
-  # GET /users
+  
+# GET /users
+  def index
+    @users = User.all
+  end
+
+  # GET /users/new
   def new
-    @user = User.all
+    @user = User.new
   end
 
 # GET /users/1
