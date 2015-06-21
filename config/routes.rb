@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   
   resources :users
   resources :twixts
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   get 'users/:id/profile', to: 'users#profile', as: 'user_profile'
   

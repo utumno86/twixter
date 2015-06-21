@@ -1,29 +1,20 @@
-
-<body>
-<div id="createTwixt" class="panel right">
-    <h1>Create a Twixt!</h1>
-    <p>
-    <form>
-        <textarea name="text" class="Text"></textarea>
-        <input type="submit" value="Twixt!">
-    </form>
-    </p>
-</div>
-<div id="twixts" class="panel left">
-    <h1>Your Twixter Profile</h1>
-    <div class="Wrapper">
-        <img class="avatar" src="<%= @user.avatar_url %>">
-        <span class="name"><%= @user.name %></span> @<%= @user.username %>
-        <p>
-        XX Twixts
-        <span class="spacing"> ? Followers</span>
-        <span class="spacing"> ? Following</span>
-        </p>
-    </div>
-</div>
-<div class="panel left">
-    <h1>Your Twixts</h1>
-    <div class="Wrapper">
-        Twixts. . .
-    </div>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= image_tag(@user.avatar.url) %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.twixts.any? %>
+      <h3>Twixts (<%= @user.twixts.count %>)</h3>
+      <ol class="twixts">
+        <%= render @twixts %>
+      </ol>
+      <%= will_paginate @twixts %>
+    <% end %>
+  </div>
 </div>
