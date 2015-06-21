@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 # GET /users/1
   def show
     @user = User.find(params[:id])
-    @twixt = current_user.twixts.build if signed_in?
+    @twixts = @user.twixts.paginate(page: params[:page])
   end
 
  # POST /users
