@@ -13,12 +13,16 @@
       <div id="logo" class="navbar-brand">LOGO HERE <%= link_to "Welcome to Twixter!", root_path %></div>
       <nav class="collapse navbar-collapse navbar-ex1-collapse">
         <% if user_signed_in? -%>
+						<ul class="nav navbar-nav navbar-center">
+							<l1><h3> Weclome, <%= current_user.name %></h3></l1>
+						</ul>
             <ul class="nav navbar-nav navbar-right">
-              <%unless current_user.name.blank?  %>
-              <l1> Weclome, <%= current_user.name %></l1>
-              <%end  %>
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
               <li><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-lg btn-primary" %></li>
+							<%unless current_user.avatar.blank?%>
+									<li><%= link_to image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail
+									navbar-right avatar'), edit_registration_path(:user)  %> </li>
+							<%end  %>
             </ul>
         <% else -%>
             <ul class="nav navbar-nav pull-right">
@@ -35,9 +39,6 @@
   <% flash.each do |name, msg| %>
       <%= content_tag(:div, msg, class: "alert alert-info") %>
   <% end %>
-  <%unless current_user.blank?  %>
-  <%= link_to image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
-  <%end  %>
 
   <div id="content" class="col-md-9 center-block">
 
