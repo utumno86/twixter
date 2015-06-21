@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :twixts
-
+  has_many :relationships
+  
   def display_name
     name.blank? ? email : name
   end

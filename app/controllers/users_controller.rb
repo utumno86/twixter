@@ -1,13 +1,16 @@
 class UsersController < ApplicationController
+  # GET /users
   def new
-    @user = User.new
+    @user = User.all
   end
 
+# GET /users/1
   def show
     @user = User.find(params[:id])
-    @twixt = Twixt.new
+    @twixt = current_user.twixts.build if signed_in?
   end
 
+ # POST /users
   def create
     @user = User.new(params[:user])
  
@@ -22,6 +25,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @twixts = Twixt.where(user_id: @user.id).order(created_at: :desc)
   end
+
+  def following
+    @title = "Following"
+    @users = @user.followed_users.paginate(page: params[:page])
+    render :show_follow
+  end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.paginate(page: params[:page])
+    render :show_follow
+  end
+
 
 private
 

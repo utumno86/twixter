@@ -14,7 +14,7 @@
       <nav class="collapse navbar-collapse navbar-ex1-collapse">
         <% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-center">
-							<l1><h3> Weclome, <%= current_user.name %></h3></l1>
+							<l1><h3> Welcome, <%= current_user.name %></h3></l1>
 						</ul>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
