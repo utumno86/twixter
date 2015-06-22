@@ -20,7 +20,7 @@
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
               <li><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-lg btn-primary" %></li>
 							<%unless current_user.avatar.blank?%>
-									<li><%= link_to image_tag(current_user.avatar.url, :size => '32x32', :class => 'img-thumbnail
+									<li><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail
 									navbar-right avatar'), edit_registration_path(:user)  %> </li>
 							<%end  %>
             </ul>

@@ -40,7 +40,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     # returns a 50x50 image
     process :resize_to_fill => [50, 50]
   end
-  version :small_avatar do
+  version :thumb do
     # returns a 35x35 image
     process :resize_to_fill => [35, 35]
   end
