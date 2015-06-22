@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :twixts, dependent: :destroy
-  has_many :active_relationships, class_name:  "Relationship",
-                                  foreign_key: "follower_id",
-                                  dependent:   :destroy
+  has_many :active_relationships,  class_name:  "Relationship",
+                                   foreign_key: "follower_id",
+                                   dependent:   :destroy
   has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "followed_id",
                                    dependent:   :destroy
@@ -18,6 +18,18 @@ class User < ActiveRecord::Base
   
   def display_name
     name.blank? ? email : name
+  end
+
+  def following?(other_user)
+    relationships.find_by(followed_id: other_user.id)
+  end
+
+  def follow!(other_user)
+    relationships.create!(followed_id: other_user.id)
+  end
+
+  def unfollow!(other_user)
+    relationships.find_by(followed_id: other_user.id).destroy
   end
 
   def self.populate!
