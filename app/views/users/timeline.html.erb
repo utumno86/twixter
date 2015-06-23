@@ -1,0 +1,15 @@
+<h1>Welcome to your timeline!</h1>
+<h3>People you follow:</h3>
+<% current_user.all_following.each do |follow|%>
+	<h5><%= link_to follow.name, follow %> </h5>
+<%end  %>
+<h3>Twixts in your timeline:</h3>
+<%@twixts.each do |twixt|  %>
+		<div class="link row clearfix">
+			<h2>
+				<%=twixt.content %><br>
+				<small class="author"> Submitted <%=time_ago_in_words(twixt.created_at)%> ago by <%=twixt.user.name %></small>
+			</h2>
+		</div>
+<%end %>
+<%= paginate @twixts %>

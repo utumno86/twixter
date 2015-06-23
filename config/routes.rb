@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       get :follow, :unfollow
     end
   end
+
+  get 'users/:id/timeline', to: 'users#timeline', as: 'user_timeline'
   
   root 'twixts#index'
  

@@ -41,7 +41,17 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-private
+  def timeline
+    @all_ids = []
+    current_user.all_following.each do |follow|
+     @all_ids << follow.id
+    end
+    @all_ids << current_user.id
+    @twixts = Twixt.where(user_id: @all_ids).order(created_at: :DESC).page(params[:page])
+  end
+
+
+  private
 
   def set_user
     @user = User.find(params[:id])

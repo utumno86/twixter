@@ -11,22 +11,8 @@ class User < ActiveRecord::Base
   acts_as_followable
   acts_as_follower
 
-
-  
   def display_name
     name.blank? ? email : name
-  end
-
-  def following?(other_user)
-
-  end
-
-  def follow!(other_user)
-
-  end
-
-  def unfollow!(other_user)
-
   end
 
   def self.populate!
