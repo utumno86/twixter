@@ -1,14 +1,14 @@
 <h1><%=@user.name  %>'s Profile Page</h1>
 <p><%= image_tag(@user.avatar.url) %></p>
-<% puts current_user.following?(@user)  %>
+<% if @user.followed_by?(current_user)  %>
 		<%= link_to 'Unfollow this user', unfollow_user_path(@user.id), class: "btn btn-small btn-danger", notice: "You are
 no longer following this user"%>
-<%#else  %>
+<%else  %>
 	<%= link_to 'Follow this user', follow_user_path(@user.id), class: "btn btn-small btn-primary", notice: "You are now
 following this user" %>
-<%#end  %>
+<%end  %>
 <h3> Following: <%= @user.follow_count %></h3>
-<h3> Followers: <%=@user.followers_count %></h3>
+<h3> Followers: <%= @user.followers_count %></h3>
 <h3> Twixts: (<%=@twixts.count%>)</h3>
 <% @twixts.each do |twixt|  %>
 		<div class="link row clearfix">
