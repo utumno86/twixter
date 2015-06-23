@@ -7,10 +7,9 @@ Rails.application.routes.draw do
   resources :users
   resources :twixts
 
-  #a bit of a leap with member? this is weird
   resources :users do
     member do
-      get :following, :followers
+      get :follow, :unfollow
     end
   end
   

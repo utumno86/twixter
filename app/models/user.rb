@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   
   has_many :twixts, dependent: :destroy
 
+  acts_as_followable
+  acts_as_follower
+
+
   
   def display_name
     name.blank? ? email : name

@@ -29,12 +29,10 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def following
-  end
-
-  def followers
-
+  def follow
+    @user = User.find(params[:id])
+    current_user.follow(@user)
+    redirect_to @user
   end
 
 private

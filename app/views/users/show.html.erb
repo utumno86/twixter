@@ -1,7 +1,9 @@
 <h1><%=@user.name  %>'s Profile Page</h1>
 <p><%= image_tag(@user.avatar.url) %></p>
-<%= link_to 'Follow this user', root_path, class: "btn btn-small btn-primary", notice: "You are now
+<%= link_to 'Follow this user', follow_user_path(@user.id), class: "btn btn-small btn-primary", notice: "You are now
 following this user" %>
+<h3> Following: <%= @user.follow_count %></h3>
+<h3> Followers: <%=@user.followers_count %></h3>
 <h3> Twixts: (<%=@twixts.count%>)</h3>
 <% @twixts.each do |twixt|  %>
 		<div class="link row clearfix">

@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'fog'
 gem 'faker'
+gem 'acts_as_follower'
 
 group :development, :test do
   gem 'byebug'
