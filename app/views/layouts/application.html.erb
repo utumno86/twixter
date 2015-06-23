@@ -10,11 +10,11 @@
 <header class="navbar navbar-default" role="navigation">
   <div class="navbar-inner">
     <div class="container">
-      <div id="logo" class="navbar-brand">LOGO HERE <%= link_to "Welcome to Twixter!", root_path %></div>
+      <div id="logo" class="navbar-brand"><img src="twixterlogo.jpg" alt="logo"><%= link_to "Welcome to Twixter!", root_path %></div>
       <nav class="collapse navbar-collapse navbar-ex1-collapse">
         <% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-center">
-							<l1><h3> Welcome, <%= current_user.name %></h3></l1>
+							<l1><h3> Welcome,<%= current_user.name %></h3></l1>
 						</ul>
             <ul class="nav navbar-nav navbar-right">
               <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
