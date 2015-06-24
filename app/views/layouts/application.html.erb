@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Twixter</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <title>Twixter</title>
+      <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
 <body>
-<header class="navbar navbar-default" role="navigation">
-  <div class="navbar-inner">
+  <div class="masthead">
     <div class="container">
-      <div id="logo" class="navbar-brand"><img src="twixterlogo.jpg" alt="logo"><%= link_to "Welcome to Twixter!", root_path %></div>
-      <nav class="collapse navbar-collapse navbar-ex1-collapse">
-        <% if user_signed_in? %>
+     <nav class="nav navbar">
+      <div class="logo"> <%= image_tag "twixterlogo.png", class: "icon" %>
+      
+      <%= link_to "Welcome to Twixter!", root_path %></div>
+        </nav>
+        <% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-center">
-							<l1><h3> Welcome,<%= current_user.name %></h3></l1>
+							<l1><h1> Welcome to Twixter, <%= current_user.name %></h1></l1>
 						</ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-              <li><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-lg btn-primary" %></li>
-							<%unless current_user.avatar.blank?%>
-									<li><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail
-									navbar-right avatar'), edit_registration_path(:user)  %> </li>
-							<%end  %>
+              <span><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+              </span>
+              <span><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-large btn-primary" %>
+              </span>
+						<%unless current_user.avatar.blank?%>
+							<span><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
+              </span>
+						<% end %>
             </ul>
         <% else -%>
             <ul class="nav navbar-nav pull-right">
@@ -30,10 +41,12 @@
               <li><%= link_to 'Sign in', new_user_session_path %></li>
             </ul>
         <% end -%>
+        </nav>
+        </div>
       </nav>
     </div>
   </div>
-</header>
+
 
 <div id="main_content" class="container">
   <% flash.each do |name, msg| %>

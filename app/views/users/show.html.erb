@@ -1,16 +1,25 @@
-<h1><%=@user.name  %>'s Profile Page</h1>
-<p><%= image_tag(@user.avatar.url) %></p>
-<% if @user.followed_by?(current_user)  %>
+<div class="user-profile-header">
+  <h1><%=@user.name  %>'s Profile Page</h1>
+  <p><%= image_tag(@user.avatar.url) %></p>
+</div>
+
+<div class="following-container">
+  <% if @user.followed_by?(current_user)  %>
 		<%= link_to 'Unfollow this user', unfollow_user_path(@user.id), class: "btn btn-small btn-danger", notice: "You are
-no longer following this user"%>
-<%else  %>
-	<%= link_to 'Follow this user', follow_user_path(@user.id), class: "btn btn-small btn-primary", notice: "You are now
-following this user" %>
-<%end  %>
-<h3> Following: <%= @user.follow_count %></h3>
-<h3> Followers: <%= @user.followers_count %></h3>
-<h3> Twixts: (<%=@twixts.count%>)</h3>
+        no longer following this user"%>
+  <%else  %>
+	 <%= link_to 'Follow this user', follow_user_path(@user.id), class: "btn btn-small btn-primary", notice: "You are now
+        following this user" %>
+  <%end  %>
+
+  <span>
+    <h3> Following: <%= @user.follow_count %></h3>
+    <h3> Followers: <%= @user.followers_count %></h3>
+    <h3> Twixts: (<%=@twixts.count%>)</h3>
+  </span>
+</div>
 <% @twixts.each do |twixt|  %>
+
 		<div class="link row clearfix">
 			<h2>
 				<%=  twixt.content %><br>
