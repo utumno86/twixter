@@ -17,31 +17,30 @@
   <div class="masthead">
     <div class="container">
      <nav class="nav navbar">
-      <div class="logo"> <%= image_tag "twixterlogo.png", class: "icon" %>
-      
-      <%= link_to "Welcome to Twixter!", root_path %></div>
+      <div class="logo"> 
+      <%= link_to image_tag("twixterlogo.png", class: "icon"), root_path %></div>
         </nav>
         <% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-center">
 							<l1><h1> Welcome to Twixter, <%= current_user.name %></h1></l1>
 						</ul>
-            <ul class="nav navbar-nav navbar-right">
-              <span><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-              </span>
-              <span><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-large btn-primary" %>
-              </span>
+            <nav class="blog-nav">
+              <a class="blog-nav-item"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "btn btn-large btn-primary" %>
+              </a>
+            <a class="blog-nav-item"><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-large btn-primary" %>
+              </a>
 						<%unless current_user.avatar.blank?%>
-							<span><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
-              </span>
+						<a class="blog-nav-item"><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
+              </a>
 						<% end %>
-            </ul>
+       
         <% else -%>
-            <ul class="nav navbar-nav pull-right">
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
-              <li><%= link_to 'Sign in', new_user_session_path %></li>
-            </ul>
+            <nav class="blog-nav">
+            <a class="blog-nav-item"><%= link_to 'Join us', new_user_registration_path, class: "btn btn-large btn-primary" %></a>
+             <a class="blog-nav-item"><%= link_to 'Sign in', new_user_session_path, class: "btn btn-large btn-primary" %></a>
         <% end -%>
-        </nav>
+            </nav>
+          </nav>
         </div>
       </nav>
     </div>

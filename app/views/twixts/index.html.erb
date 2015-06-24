@@ -1,11 +1,10 @@
 <div class="page-container">
- <ul>
   <span><%= link_to 'User List', users_path, class: "btn btn-small btn-primary" %> 
   </span>
   <span><%= link_to 'Your Timeline', user_timeline_path(current_user.id), class: "btn btn-small btn-primary" %> 
   </span>
-  </ul>
-
+</div>
+<div class="content">
 <% @twixts.each do |twixt| %>
     <div class="link row clearfix">
       <h2>
@@ -17,7 +16,7 @@
     </div>
 <% end %>
 
-    <div class="link row clearfix"
+<div class="pager">
     <%= paginate @twixts %>
   </div>
 </div>

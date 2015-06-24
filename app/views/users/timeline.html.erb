@@ -1,7 +1,7 @@
 <h1>Welcome to your timeline!</h1>
 <h3>People you follow:</h3>
 <% current_user.all_following.each do |follow|%>
-	<h5><%= link_to follow.name, follow %> </h5>
+	<h4><%= link_to follow.name, follow %> </h4>
 <%end  %>
 <h3>Twixts in your timeline:</h3>
 <%@twixts.each do |twixt|  %>
