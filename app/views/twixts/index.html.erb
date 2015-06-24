@@ -1,6 +1,7 @@
-<h1>Welcome to Twixter!</h1>
-<p><%= link_to 'User List', users_path, class: "btn btn-small btn-primary" %> </p>
-<p><%= link_to 'Your Timeline', user_timeline_path(current_user.id), class: "btn btn-small btn-primary" %> </p></p>
+<div class="page-container">
+  <h1>Welcome to Twixter!</h1>
+  <p><%= link_to 'User List', users_path, class: "btn btn-small btn-primary" %> </p>
+  <p><%= link_to 'Your Timeline', user_timeline_path(current_user.id), class: "btn btn-small btn-primary" %> </p></p>
 
 <% @twixts.each do |twixt| %>
     <div class="link row clearfix">
@@ -14,6 +15,7 @@
 
 <% end %>
 
-<div class="link row clearfix"
-<%= paginate @twixts %>
+    <div class="link row clearfix"
+    <%= paginate @twixts %>
+  </div>
 </div>
