@@ -1,7 +1,8 @@
 <h1>Welcome to Twixter!</h1>
 <p><%= link_to 'User List', users_path, class: "btn btn-small btn-primary" %> </p>
+<%if user_signed_in?  %>
 <p><%= link_to 'Your Timeline', user_timeline_path(current_user.id), class: "btn btn-small btn-primary" %> </p></p>
-
+<%end %>
 <% @twixts.each do |twixt| %>
     <div class="link row clearfix">
       <h2>
