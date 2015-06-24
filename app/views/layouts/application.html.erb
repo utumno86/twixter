@@ -16,14 +16,14 @@
 <body>
   <div class="masthead">
     <div class="container">
-     <nav class="nav">
-      <div class="logo"> <%= image_tag "twixterlogo.jpg", class: "icon" %>
+     <nav class="nav navbar">
+      <div class="logo"> <%= image_tag "twixterlogo.png", class: "icon" %>
       
-        <%= link_to "Welcome to Twixter!", root_path %></div>
-      <nav class="collapse navbar-collapse navbar-ex1-collapse">
+      <%= link_to "Welcome to Twixter!", root_path %></div>
+        </nav>
         <% if user_signed_in? -%>
 						<ul class="nav navbar-nav navbar-center">
-							<l1><h2> Welcome,<%= current_user.name %></h2></l1>
+							<l1><h1> Welcome to Twixter, <%= current_user.name %></h1></l1>
 						</ul>
             <ul class="nav navbar-nav navbar-right">
               <span><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
@@ -41,7 +41,7 @@
               <li><%= link_to 'Sign in', new_user_session_path %></li>
             </ul>
         <% end -%>
-          </nav>
+        </nav>
         </div>
       </nav>
     </div>

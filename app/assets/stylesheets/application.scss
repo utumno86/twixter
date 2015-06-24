@@ -10,8 +10,25 @@ div.masthead {
           box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
 }
 
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px 1px #777;
+  color: #0033CC;
+  font-size: 3em;
+}
+
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  padding-top: 30px;
+  padding-top: 0px;
   background-color: #e8e8e8;
   }
+
+h2, .h2,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #0033CC;
+}
