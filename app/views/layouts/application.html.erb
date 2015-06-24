@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
               <span><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
               </span>
-              <span><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-lg btn-primary" %>
+              <span><%= link_to 'Twixt!', new_twixt_path, class: "btn btn-large btn-primary" %>
               </span>
 						<%unless current_user.avatar.blank?%>
 							<span><%=link_to image_tag(current_user.avatar.thumb.url, :class => 'img-thumbnail navbar-right avatar'), edit_registration_path(:user)  %>
