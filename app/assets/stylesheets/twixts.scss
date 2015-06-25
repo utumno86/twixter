@@ -21,15 +21,23 @@ h6, .h6 {
   margin-left: 20px;
   border-radius: 20px;
 }
+
+small.author {
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
  
- /* Pagination */
 .pager {
   margin-bottom: 60px;
+  font-family: "Georgia", Helvetica, Arial, sans-serif;
   text-align: left;
 }
 .pager > li > a {
   width: 140px;
   padding: 10px 20px;
+  font-family: "Georgia", sans-serif;
+  font-size: 12pt;
   text-align: center;
   border-radius: 30px;
 }

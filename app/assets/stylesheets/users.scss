@@ -12,10 +12,21 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: 0;
+  margin-top: 25pt;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #000066; {
   text-align: center;
+}
+
+.follows-top {
+  margin-left: 15pt;
+  padding-top: 20pt,
+  padding-bottom: 15pt;
+}
+
+.users-list {
+  margin-top: 25pt;
+  border-top-color: #FFFFFF;
 }
 

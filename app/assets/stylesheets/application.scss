@@ -19,8 +19,10 @@ div.masthead {
 
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  padding-top: 0px;
+  padding-top: 20px;
   background-color: #e8e8e8;
+  border: 20pt;
+  border-top-color: #FFFFFF;
   }
 
 h2, .h2,
@@ -78,6 +80,7 @@ h6, .h6 {
    }
 .button:active {
   border-top-color: #1b435e;
+  text-decoration: bold;
   background: #1b435e;
   }
 
@@ -85,11 +88,30 @@ h6, .h6 {
   text-align: right;
 }
 
+.page-container, span {
+  display: inline-block;
+  text-align: center;
+  margin-left: 15pt;
+  padding: 20pt;
+}
+
 .follow-header {
   display: inline-block;
-  padding: 10px;
-  margin-left: 10px;
+  padding: 10pt;
+  margin-left: 10pt;
   }
+
+.follows-top {
+  margin-left: 15pt;
+  padding-top: 20pt;
+  }
+
+.users-list {
+  margin-top: 25pt;
+  border-top-color: #FFFFFF;
+  font-color: #006600;
+}
+
 
 
 
