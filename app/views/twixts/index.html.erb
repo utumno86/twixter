@@ -1,8 +1,10 @@
 <div class="page-container">
   <span><%= link_to 'User List', users_path, class: "btn btn-small btn-primary" %> 
   </span>
+  <% unless current_user.blank? %>
   <span><%= link_to 'Your Timeline', user_timeline_path(current_user.id), class: "btn btn-small btn-primary" %> 
   </span>
+  <% end %>
 </div>
 <div class="content">
 <% @twixts.each do |twixt| %>
