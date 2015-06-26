@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'users/:id/timeline', to: 'users#timeline', as: 'user_timeline'
+  get 'timeline', to: 'users#timeline', as: 'timeline'
   
   root 'twixts#index'
  
