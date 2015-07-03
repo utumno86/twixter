@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     @twixts = Twixt.where(user_id: all_ids).order(created_at: :DESC).page(params[:page])
   end
 
+  def search
+
+  end
+
 
   private
 

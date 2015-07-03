@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   get 'timeline', to: 'users#timeline', as: 'timeline'
+  get 'search', to: 'users#search', as: 'search'
   
   root 'twixts#index'
  
