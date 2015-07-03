@@ -5,6 +5,11 @@
   <span><%= link_to 'Your Timeline', timeline_path(current_user.id), class: "btn btn-small btn-primary" %>
   </span>
   <% end %>
+	<span><%= form_tag("/search", method: "get") do %>
+            <%= label_tag(:word, "Search for:") %>
+				<%= text_field_tag(:word) %>
+				<%= submit_tag("Search") %>
+        <% end %></span>
 </div>
 <div class="content">
 <% @twixts.each do |twixt| %>

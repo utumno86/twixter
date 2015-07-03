@@ -11,4 +11,8 @@ class Twixt < ActiveRecord::Base
       t.save
     end
   end
+
+  def self.search(word)
+    where (["LOWER(content) LIKE ?", "%#{word.downcase}%"])
+  end
 end

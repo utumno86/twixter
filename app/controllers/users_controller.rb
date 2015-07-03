@@ -2,23 +2,19 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers]
   before_action :authenticate_user!, except: [:index]
 
-# GET /users
   def index
     @users = User.all
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-# GET /users/1
   def show
     @user = User.find(params[:id])
     @twixts = Twixt.where(user_id: @user.id).order(created_at: :desc)
   end
 
- # POST /users
   def create
     @user = User.new(params[:user])
  
@@ -48,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def search
-
+    @twixts = Twixt.search(params[:word])
   end
 
 
