@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :users, :controllers =>{
-                 :registrations => 'registrations'
+                 :registrations => 'registrations',
+                 :omniauth_callbacks => "users/omniauth_callbacks"
                    }
   
   resources :users
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   get 'timeline', to: 'users#timeline', as: 'timeline'
+  get 'search', to: 'users#search', as: 'search'
   
   root 'twixts#index'
  

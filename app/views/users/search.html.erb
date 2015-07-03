@@ -1,0 +1,19 @@
+div class="follows-top">
+<h3>You are following:</h3>
+<% current_user.all_following.each do |follow|%>
+		<h4><%= link_to follow.name, follow %> </h4>
+<% end %>
+</div>
+<h3>Twixts that match your search term:</h3>
+<% @twixts.each do |twixt| %>
+
+		<div class="link-row-clearfix">
+			<h2>
+				<%=twixt.content %><br>
+				<small class="author"> Submitted <%=time_ago_in_words(twixt.created_at)%> ago by <%=twixt.user.name %></small>
+			</h2>
+		</div>
+<% end %>
+<div class="pager">
+	<%= paginate @twixts %>
+</div>

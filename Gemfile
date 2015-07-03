@@ -18,6 +18,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'faker'
 gem 'acts_as_follower'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'byebug'
