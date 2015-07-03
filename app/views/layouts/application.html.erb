@@ -38,6 +38,7 @@
             <nav class="blog-nav">
             <a class="blog-nav-item"><%= link_to 'Join us', new_user_registration_path, class: "btn btn-large btn-primary" %></a>
              <a class="blog-nav-item"><%= link_to 'Sign in', new_user_session_path, class: "btn btn-large btn-primary" %></a>
+             <a class="blog-nav-item"><%= link_to 'Sign in with Google', user_omniauth_authorize_path(:google_oauth2), class: "btn btn-large btn-primary" %></a>
         <% end -%>
             </nav>
           </nav>
