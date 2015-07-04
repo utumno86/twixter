@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  include Searchable
-
   mount_uploader :avatar, AvatarUploader
   
   # Include default devise modules. Others available are:
