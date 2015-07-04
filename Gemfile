@@ -19,6 +19,7 @@ gem 'fog'
 gem 'faker'
 gem 'acts_as_follower'
 gem 'omniauth-google-oauth2'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug'
