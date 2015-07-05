@@ -20,6 +20,7 @@ gem 'faker'
 gem 'acts_as_follower'
 gem 'omniauth-google-oauth2'
 gem 'rails_admin'
+gem 'closure_tree'
 
 group :development, :test do
   gem 'byebug'

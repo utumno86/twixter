@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:google_oauth2]
   
   has_many :twixts, dependent: :destroy
+  has_many :comments
 
   acts_as_followable
   acts_as_follower

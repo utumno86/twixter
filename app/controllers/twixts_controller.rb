@@ -1,4 +1,5 @@
 class TwixtsController < ApplicationController
+  before_action :set_twixt, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
 
   def index
@@ -6,7 +7,8 @@ class TwixtsController < ApplicationController
   end
 
   def show
-    
+    @twixts = Twixt.all
+    @comment = Comment.new
   end
 
   def new
@@ -17,7 +19,7 @@ class TwixtsController < ApplicationController
   end
 
   def create
-    @twixt = current_user.twixts.build(twixt_params)
+    @twixt = current_user.twixts.new(twixt_params)
 
     if @twixt.save
       redirect_to twixts_path, notice: 'Twixt was successfully created.'

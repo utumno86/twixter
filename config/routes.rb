@@ -7,7 +7,9 @@ Rails.application.routes.draw do
                    }
   
   resources :users
-  resources :twixts
+  resources :twixts do
+    resources :comments, :only => [:create]
+  end
 
   resources :users do
     member do

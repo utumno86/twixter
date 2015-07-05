@@ -1,5 +1,7 @@
 class Twixt < ActiveRecord::Base
   belongs_to :user
+  has_many :comments
+    accepts_nested_attributes_for :comments
   validates :user_id, presence: true
   validates :content, length: { maximum: 140 }
 
