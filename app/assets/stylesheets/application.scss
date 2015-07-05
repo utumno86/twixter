@@ -1,6 +1,8 @@
 
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import "bootstrap"; 
+@import "font-awesome";
+
 
 div.masthead {
   display: block;
@@ -47,7 +49,6 @@ h6, .h6 {
   margin-left: 10px;
 }
 
-.btn,
 .btn-small,
 .btn-large,
 .btn-primary,
@@ -73,11 +74,13 @@ h6, .h6 {
    text-decoration: none;
    vertical-align: middle;
    }
+
 .button:hover {
   border-top-color: #0c507d;
   background: #0c507d;
   color: #fcfcfc;
    }
+
 .button:active {
   border-top-color: #1b435e;
   text-decoration: bold;
@@ -92,7 +95,7 @@ h6, .h6 {
   display: inline-block;
   text-align: center;
   margin-left: 15pt;
-  padding: 20pt;
+
 }
 
 .follow-header {
