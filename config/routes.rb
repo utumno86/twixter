@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   resources :users
   
   resources :twixts do
+<<<<<<< HEAD
     resources :comments
+=======
+    resources :comments, :only => [:create, :destroy]
+>>>>>>> 6f4053a1d93e96e6cc851ca7e20512ca7a2fa9e3
   end
 
   resources :users do
