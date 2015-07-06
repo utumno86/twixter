@@ -14,7 +14,11 @@
 <div class="content">
 <% @twixts.each do |twixt| %>
     <div class="twixt">
-    <img class="avatar" src="<%= twixt.user.avatar.medium_avatar %>"> 
+    <% if twixt.user.avatar? %>
+      <img class="avatar" src="<%= twixt.user.avatar.medium_avatar %>"> 
+      <% else %>
+      <%= image_tag "default_avatar.png", size: "50x50", class: "avatar" %>
+      <% end %>
       <h2><%=  twixt.content %></h2>
       <p class="author">Submitted <%= time_ago_in_words(twixt.created_at) %> ago by <%= twixt.user.name %></p>
       <br>

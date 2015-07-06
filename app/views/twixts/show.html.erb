@@ -10,16 +10,25 @@
       </p>
     </div>
  
-<strong> Comments: </strong>
+
+<h3> Comments: </h3>
 <% @twixt.comments.each do |comment| %>
-  <%= comment.title %>
-  <%= comment.body %>
-  <% end %>
+<div class="content">
+  <h4><%= comment.author %></h4>
+  <h4><%= comment.title %></h4>
+  <h4><%= comment.body %></h4>
+  <!-- <h5><%= comment.user %></h5> -->
+  
+    <h6><%= link_to 'Delete', twixt_comment_path(@comment), method: :delete, data: { confirm: 'Are you sure?' } %></h6>
+  
+<% end %>
+</div>
     
     <div class="container">
       <%= form_for([@twixt, @comment]) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %><br>
+      <%= f.hidden_field :author, :value => current_user.id %>
+      <%= f.label :body %>
+      <%= f.text_area :body %><br>
       <%= f.label :body %>
       <%= f.text_area :body %><br>
       <%= f.submit class: "btn btn-small btn-primary" %>

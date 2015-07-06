@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
       u.avatar = Faker::Avatar.image
       u.save
     end
-
   end
 
   def self.from_omniauth(access_token)
