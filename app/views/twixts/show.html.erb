@@ -10,9 +10,7 @@
     </div>
  
 <strong> Comments: </strong>
-
 <% @twixt.comments.each do |comment| %>
-  
   <%= comment.title %>
   <%= comment.body %>
   <% end %>
@@ -20,11 +18,13 @@
     
     <div class="container">
       <%= form_for([@twixt, @comment]) do |f| %>
-      
       <%= f.label :title %>
       <%= f.text_field :title %><br>
       <%= f.label :body %>
       <%= f.text_area :body %><br>
-      <%= f.submit class: "button round secondary small" %>
+      <%= f.submit class: "btn btn-small btn-primary" %>
+      <%= link_to 'Back', twixts_path, class: "btn btn-small btn-primary" %>
       <% end %>
     </div>
+
+    
