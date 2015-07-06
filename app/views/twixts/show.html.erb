@@ -3,7 +3,8 @@
 <div class="content">
   <h2><%= @twixt.content %></h2>
     <br>
-    <small class="author">Submitted <%= time_ago_in_words(@twixt.created_at) %> ago by <%= @twixt.user.name %></small>
+    <small class="author">Submitted <%= time_ago_in_words(@twixt.created_at) %> 
+      ago by <%= @twixt.user.name %></small>
       <p><%= link_to 'User Profile', user_path(@twixt.user.id), 
                       class: "btn btn-small btn-primary"%>
       </p>
@@ -14,7 +15,6 @@
   <%= comment.title %>
   <%= comment.body %>
   <% end %>
-    
     
     <div class="container">
       <%= form_for([@twixt, @comment]) do |f| %>

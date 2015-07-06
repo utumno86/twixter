@@ -12,6 +12,11 @@ def create
     render 'new'
   end
 end
+
+def destroy
+    current_user.comments.destroy(params[:id])
+    redirect_to :back, :notice => "Removed Comment"
+end
  
 private
  
