@@ -13,6 +13,7 @@
 </div>
 <div class="content">
 <% @twixts.each do |twixt| %>
+<<<<<<< HEAD
     <div class="link row clearfix">
       <h2>
         <%=  twixt.content %><br>
@@ -22,8 +23,19 @@
       </p>
       <p><%= link_to 'Show Twixt', twixt_path(twixt), class: "btn btn-small btn-primary"%>
       </p>
+=======
+    <div class="twixt">
+    <img class="avatar" src="<%= twixt.user.avatar.medium_avatar %>"> 
+      <h2><%=  twixt.content %></h2>
+      <p class="author">Submitted <%= time_ago_in_words(twixt.created_at) %> ago by <%= twixt.user.name %></p>
+      <br>
+			<%= link_to 'User Profile', user_path(twixt.user.id), class: "btn btn-small btn-primary" %>
+      <%= link_to 'Show Twixt', twixt_path(twixt), class: "btn btn-small btn-primary" %>
+      <br>
+>>>>>>> 18d3c4889491256ffa48d1c4bbbba2cda7395dbb
     </div>
 <% end %>
+</div>
 
 
 <div class="link row clearfix">
