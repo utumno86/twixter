@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :users
   resources :twixts do
-    resources :comments, :only => [:create]
+    resources :comments, :only => [:create, :destroy]
   end
 
   resources :users do
