@@ -15,8 +15,8 @@ def create
 end
 
 def destroy
-  @twixt = Twixt.find(params[:twixt_id])
-  @comment = @twixt.comments.find(params[:comment_id])
+
+  @comment = Comment.find(params[:id])
   @comment.destroy
     
     redirect_to :back, :notice => "Removed Comment."
