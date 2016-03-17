@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.3'
 
 gem 'rails', '4.2.1'
 gem 'pg'
@@ -20,7 +21,6 @@ gem 'faker'
 gem 'acts_as_follower'
 gem 'omniauth-google-oauth2'
 gem 'rails_admin'
-gem 'closure_tree'
 
 group :development, :test do
   gem 'byebug'
@@ -34,4 +34,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
