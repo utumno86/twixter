@@ -1,7 +1,9 @@
 
 <div class="user-profile-header">
   <h1><%=@user.name  %>'s Profile Page</h1>
-  <p><%= image_tag(@user.avatar.url) %></p>
+  <%if @user.avatar %>
+    <p><%= image_tag(@user.avatar.url) %></p>
+  <% end  %>
 </div>
 
 <div class="user-follow">
@@ -16,7 +18,7 @@
   <div><h3 class="follow-header"> Following: <%= @user.follow_count %></h3>
        <h3 class="follow-header"> Followers: <%= @user.followers_count %></h3>
        <h3 class="follow-header"> Twixts: (<%=@twixts.count%>)</h3>
-  <div> 
+  <div>
   <div class="view">
     <% @twixts.each do |twixt|  %>
      <h2>
@@ -25,4 +27,3 @@
     </h2>
   </div>
   <%end %>
-  
