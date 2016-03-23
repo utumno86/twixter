@@ -21,6 +21,7 @@ gem 'faker'
 gem 'acts_as_follower'
 gem 'omniauth-google-oauth2'
 gem 'rails_admin'
+gem 'sendgrid'
 
 group :development, :test do
   gem 'byebug'
@@ -28,8 +29,6 @@ group :development, :test do
   gem 'spring'
   gem 'quiet_assets'
 end
-
-
 
 group :production do
   gem 'rails_12factor'
