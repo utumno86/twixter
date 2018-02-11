@@ -23,6 +23,7 @@ gem 'omniauth-google-oauth2'
 gem 'rails_admin'
 gem 'sendgrid'
 gem 'foreman'
+gem 'omniauth', '~> 1.3.2'
 
 group :development, :test do
   gem 'byebug'
